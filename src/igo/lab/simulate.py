@@ -404,6 +404,7 @@ def score(
         "transcripts": transcripts,
         "store_reapply_changes": store_changes,
         "review_sample": _review_sample(view, p),
+        "link_sample": _link_sample(view, p),
         "machines": len(p.equipment),
     }
 
@@ -461,6 +462,25 @@ def _show(a, view: GraphView) -> str:
     if a.kind == "last_corrective":
         return f"Day {a.value}" if a.value is not None else "No corrective work order."
     return {True: "Yes, rising.", False: "No.", None: "No vibration sensor linked."}[a.value]
+
+
+def _link_sample(view: GraphView, p: Plant) -> list[dict]:
+    """A display sample for the console: the first unit's series and the machines they were linked to."""
+    out: list[dict] = []
+    unit = min(e.unit for e in p.equipment.values())
+    keyed = [(view.md.machines[d.canon].key, t, d) for t, d in view.decisions.items() if d.canon is not None]
+    for k, t, d in sorted(keyed, key=lambda x: (str(x[0]), view.series[x[1]].name)):
+        if k is None or k.unit != unit or len(out) >= 16:
+            continue
+        out.append(
+            {
+                "name": view.series[t].name,
+                "tag": str(k),
+                "how": d.how,
+                "right": p.sap_owner.get(d.canon or "") == p.sensors[p.ts_sensor[t]].eid,
+            }
+        )
+    return out
 
 
 def _review_sample(view: GraphView, p: Plant) -> list[dict]:

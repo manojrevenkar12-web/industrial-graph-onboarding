@@ -1,0 +1,82 @@
+.figure {
+  margin: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+.figure svg {
+  width: 100%;
+  height: auto;
+}
+.tag {
+  font-family: var(--font-num);
+  font-size: 12px;
+  fill: var(--ink-2);
+}
+.wire {
+  fill: none;
+  stroke: var(--steel);
+  stroke-width: 1.5;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+.auto {
+  stroke: var(--steel);
+}
+.review {
+  stroke: var(--amber);
+  stroke-width: 2.25;
+}
+.inherited {
+  stroke: var(--steel);
+  opacity: 0.55;
+}
+.wrong {
+  stroke: var(--alarm);
+}
+.machine {
+  fill: var(--surface);
+  stroke: var(--ink-2);
+  stroke-width: 1;
+}
+.machineText {
+  font-family: var(--font-num);
+  font-weight: 600;
+  font-size: 12px;
+  fill: var(--ink);
+}
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  color: var(--ink-2);
+  font-size: var(--step--1);
+}
+.key {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.swatch {
+  display: inline-block;
+  width: 22px;
+  height: 0;
+  border-top: 2px solid var(--steel);
+}
+.swatch.review {
+  border-top-color: var(--amber);
+}
+.swatch.inherited {
+  opacity: 0.55;
+}
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wire {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}

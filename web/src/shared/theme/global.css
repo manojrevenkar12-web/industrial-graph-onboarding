@@ -1,0 +1,42 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 100%;
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  margin: 0;
+}
+h1,
+h2,
+h3 {
+  line-height: var(--lh-tight);
+  margin: 0;
+  font-weight: 600;
+}
+p {
+  margin: 0;
+}
+:focus-visible {
+  outline: var(--line-strong) solid var(--focus);
+  outline-offset: 2px;
+}
+.num {
+  font-family: var(--font-num);
+  font-variant-numeric: tabular-nums;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

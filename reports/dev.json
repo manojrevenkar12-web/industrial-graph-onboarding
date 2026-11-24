@@ -716,6 +716,104 @@
   }
  ],
  "samples": {
+  "links": [
+   {
+    "how": "review",
+    "name": "TAG_629764",
+    "right": true,
+    "tag": "E-2101"
+   },
+   {
+    "how": "auto",
+    "name": "U21_TT_2160_PV",
+    "right": true,
+    "tag": "E-2101"
+   },
+   {
+    "how": "auto",
+    "name": "U21_TT_2167_PV",
+    "right": true,
+    "tag": "E-2101"
+   },
+   {
+    "how": "inherited",
+    "name": "TAG_145843",
+    "right": true,
+    "tag": "E-2102"
+   },
+   {
+    "how": "auto",
+    "name": "U21_PT_2164_PV",
+    "right": true,
+    "tag": "E-2102"
+   },
+   {
+    "how": "auto",
+    "name": "U21_TT_2157_PV",
+    "right": true,
+    "tag": "E-2102"
+   },
+   {
+    "how": "auto",
+    "name": "U21_TT_2186_PV",
+    "right": true,
+    "tag": "E-2102"
+   },
+   {
+    "how": "auto",
+    "name": "U21_PT_2176_PV",
+    "right": true,
+    "tag": "E-2107"
+   },
+   {
+    "how": "auto",
+    "name": "U21_TT_2107_PV",
+    "right": true,
+    "tag": "E-2107"
+   },
+   {
+    "how": "auto",
+    "name": "U21_TT_2193_PV",
+    "right": true,
+    "tag": "E-2107"
+   },
+   {
+    "how": "inherited",
+    "name": "TAG_269032",
+    "right": true,
+    "tag": "F-2104"
+   },
+   {
+    "how": "auto",
+    "name": "U21_IT_2104_PV",
+    "right": true,
+    "tag": "F-2104"
+   },
+   {
+    "how": "auto",
+    "name": "U21_VT_2104_PV",
+    "right": true,
+    "tag": "F-2104"
+   },
+   {
+    "how": "inherited",
+    "name": "TAG_404423",
+    "right": true,
+    "tag": "F-2106"
+   },
+   {
+    "how": "auto",
+    "name": "U21_IT_2106_PV",
+    "right": true,
+    "tag": "F-2106"
+   },
+   {
+    "how": "auto",
+    "name": "U21_VT_2106_PV",
+    "right": true,
+    "tag": "F-2106"
+   }
+  ],
   "review": [
    {
     "candidates": [

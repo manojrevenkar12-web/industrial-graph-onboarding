@@ -138,6 +138,7 @@ def summarize(world: str, seeds: list[int], runs: dict[str, list[dict]]) -> dict
         "samples": {
             "transcripts": {n: first[n]["transcripts"] for n in ("platform", "model_alone", "status_quo")},
             "review": first["platform"]["review_sample"],
+            "links": first["platform"]["link_sample"],
         },
     }
 

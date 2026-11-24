@@ -1,0 +1,68 @@
+.wrap {
+  display: grid;
+  gap: var(--space-4);
+}
+.tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: var(--line) solid var(--rule);
+}
+.tabs button {
+  all: unset;
+  cursor: pointer;
+  padding: var(--space-2) var(--space-4);
+  color: var(--ink-2);
+  border-bottom: var(--line-strong) solid transparent;
+  margin-bottom: -1px;
+}
+.tabs button:focus-visible {
+  outline: var(--line-strong) solid var(--focus);
+}
+.tabs .on {
+  color: var(--ink);
+  border-bottom-color: var(--steel);
+  font-weight: 600;
+}
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: var(--space-3);
+}
+.list li {
+  background: var(--surface);
+  border-left: 3px solid var(--rule);
+  padding: var(--space-3) var(--space-4);
+  display: grid;
+  gap: var(--space-1);
+}
+.q {
+  font-weight: 500;
+}
+.user {
+  font-family: var(--font-num);
+  color: var(--ink-3);
+  margin-right: var(--space-1);
+}
+.a {
+  color: var(--ink-2);
+  font-size: var(--step--1);
+}
+.verdict {
+  font-size: var(--step--1);
+  color: var(--ink-3);
+}
+.wrong,
+.leaks,
+.refused_wrongly {
+  border-left-color: var(--alarm) !important;
+}
+.wrong .verdict,
+.leaks .verdict {
+  color: var(--alarm);
+}
+.declined {
+  border-left-color: var(--amber) !important;
+}

@@ -1,0 +1,43 @@
+.wrap {
+  overflow-x: auto;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--step--1);
+  background: var(--surface);
+}
+.table caption {
+  text-align: left;
+  color: var(--ink-3);
+  padding-bottom: var(--space-2);
+}
+.table th,
+.table td {
+  padding: var(--space-3);
+  border-bottom: var(--line) solid var(--rule);
+  text-align: left;
+  vertical-align: top;
+}
+.table thead th {
+  color: var(--ink-3);
+  font-weight: 500;
+}
+.table tbody th {
+  font-weight: 500;
+}
+.sub {
+  display: block;
+  color: var(--ink-3);
+  font-family: var(--font);
+}
+.missed {
+  color: var(--alarm);
+}
+.missed .sub {
+  color: var(--alarm);
+}
+.mine {
+  font-weight: 600;
+  color: var(--steel);
+}

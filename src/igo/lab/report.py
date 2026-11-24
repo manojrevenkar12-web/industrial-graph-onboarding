@@ -177,6 +177,7 @@ def console_data() -> dict:
         "heldout": _load("heldout"),
         "lock": json.loads((REPORTS / "heldout.lock").read_text()) if (REPORTS / "heldout.lock").exists() else None,
         "order": {"main": MAIN, "ablations": ABLATIONS},
+        "sla_hours": load("platform")["monitoring"]["sla_hours"],
     }
 
 

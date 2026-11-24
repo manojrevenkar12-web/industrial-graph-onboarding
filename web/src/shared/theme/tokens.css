@@ -1,0 +1,64 @@
+/* A high-performance HMI palette (after ISA-101): the process is grey, colour is kept for what needs a person.
+   Steel for links code made, amber for what the engineer reviewed, red for anything wrong. */
+:root {
+  --bg: #d6dbdf;
+  --surface: #e8ebed;
+  --surface-sunk: #c8cfd4;
+  --ink: #1b2228;
+  --ink-2: #47515a;
+  --ink-3: #66717a;
+  --rule: #aab3ba;
+  --steel: #2d4a5f;
+  --steel-soft: #c3d0da;
+  --amber: #b87700;
+  --amber-soft: #f0dfb8;
+  --alarm: #b3261e;
+  --alarm-soft: #efcfcb;
+  --other: #8a949c;
+  --focus: #2d4a5f;
+
+  --font: "Barlow", system-ui, sans-serif;
+  --font-num: "Barlow Semi Condensed", "Barlow", system-ui, sans-serif;
+  --step--1: 0.8125rem;
+  --step-0: 0.9375rem;
+  --step-1: 1.125rem;
+  --step-2: 1.5rem;
+  --step-3: 2.5rem;
+  --lh-tight: 1.1;
+  --lh-body: 1.5;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+
+  --radius: 2px;
+  --measure: 66ch;
+  --page: 1180px;
+  --line: 1px;
+  --line-strong: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c2226;
+    --surface: #252d32;
+    --surface-sunk: #171c1f;
+    --ink: #e3e7ea;
+    --ink-2: #b3bcc3;
+    --ink-3: #8b959d;
+    --rule: #3d474e;
+    --steel: #8fb3cc;
+    --steel-soft: #2c3e4b;
+    --amber: #e3a72f;
+    --amber-soft: #4a3a17;
+    --alarm: #ef7a70;
+    --alarm-soft: #4d2522;
+    --other: #6d777f;
+    --focus: #8fb3cc;
+  }
+}
