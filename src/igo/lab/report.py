@@ -1,0 +1,194 @@
+"""Reports are generated from reports/*.json and never edited by hand: the README results block, REPORT.md, the
+console's data file and the Grafana dashboard handed over at go-live."""
+
+from __future__ import annotations
+
+import json
+
+from igo.config import ROOT, load
+from igo.lab.tidy import tidy
+from igo.platform.monitor import grafana_dashboard
+
+REPORTS = ROOT / "reports"
+START, END = "<!-- results:start -->", "<!-- results:end -->"
+MAIN = ["status_quo", "fuzzy_match", "model_alone", "platform"]
+ABLATIONS = ["no_signal", "no_pid", "no_review", "no_quality", "agent_unchecked"]
+
+
+def _load(name: str) -> dict | None:
+    p = REPORTS / f"{name}.json"
+    return json.loads(p.read_text()) if p.exists() else None
+
+
+def pct(x: float | None, digits: int = 1) -> str:
+    return "n/a" if x is None else f"{100 * x:.{digits}f}%"
+
+
+def frac(a: int, b: int) -> str:
+    return f"{a} of {b}"
+
+
+def row(name: str, d: dict) -> list[str]:
+    a = d["agent"]
+    wo = d["work_orders"]
+    return [
+        "**industrial-graph-onboarding**" if name == "platform" else d["label"],
+        pct(d["link_recall"]),
+        str(d["wrong_links"]),
+        f"{d['onboarding_hours']:.1f}",
+        f"{d['golive_days']:.1f}",
+        frac(d["duplicates"]["merged_right"], d["duplicates"]["planted"]),
+        pct(wo["right"] / wo["total"]),
+        pct(d["incidents_in_sla"], 0),
+        frac(d["warned"], d["failures"]),
+        pct(d["agent_right"]),
+        str(a["leaks"]),
+    ]
+
+
+HEAD = [
+    "Design",
+    "Series on the right machine",
+    "Wrong links",
+    "Engineer hours to go-live",
+    "Go-live (days)",
+    "Duplicate records merged",
+    "Work orders on the right machine",
+    "Incidents caught in SLA",
+    "Failures warned 2-21 days ahead",
+    "Agent answers right",
+    "Answers outside the user's units",
+]
+
+
+def table(head: list[str], rows: list[list[str]]) -> str:
+    out = ["| " + " | ".join(head) + " |", "|" + "|".join(["---"] + ["---:"] * (len(head) - 1)) + "|"]
+    out += ["| " + " | ".join(r) + " |" for r in rows]
+    return "\n".join(out)
+
+
+def gates(data: dict) -> str:
+    fails = [g["gate"] for g in data["gates"] if not g["pass"]]
+    n = len(data["gates"])
+    return f"Gates: all {n} pass." if not fails else f"Gates: {n - len(fails)} of {n} pass. FAILED: " + "; ".join(fails)
+
+
+def checks_table(d: dict) -> str:
+    p = d["designs"]["platform"]
+    wo = p["work_orders"]
+    rows = [
+        [
+            "Duplicate equipment records in SAP PM, merged into one machine",
+            frac(p["duplicates"]["merged_right"], p["duplicates"]["planted"]),
+            str(p["duplicates"]["merged_wrong"]),
+        ],
+        [
+            "Historian tags renamed, old and new joined as one sensor",
+            frac(p["renames"]["merged_right"], p["renames"]["planted"]),
+            str(p["renames"]["merged_wrong"]),
+        ],
+        [
+            "Pressures stored in kPa but declared as bar, converted",
+            frac(p["units"]["caught"], p["units"]["planted"]),
+            str(p["units"]["false"]),
+        ],
+        [
+            "Work orders booked on the wrong machine, moved to the right one",
+            frac(wo["misbooked_fixed"], wo["misbooked"]),
+            str(wo["relink_wrong"]),
+        ],
+    ]
+    return table(["What the checks found (all plants)", "Fixed, of planted", "Fixed wrongly"], rows)
+
+
+def readme_block() -> str:
+    dev = _load("dev")
+    if dev is None:
+        return "_No results yet: run `igo run dev` and `igo report`._"
+    parts = ["_Generated from `reports/*.json` by `igo report`; do not edit by hand._", ""]
+    d = dev["designs"]
+    parts += [
+        f"**Development plants** (seeds {dev['seeds']}; {d['platform']['series']} historian series, "
+        f"{d['platform']['machines']} machines, {d['platform']['questions']} agent questions)",
+        "",
+    ]
+    parts += [table(HEAD, [row(n, d[n]) for n in MAIN]), "", gates(dev), ""]
+    sq = d["status_quo"]
+    parts += [
+        f"Manual onboarding also costs the engineer {sq['question_hours']:.1f} hours per plant answering "
+        f"the same {sq['questions'] // len(dev['seeds'])} questions by hand; the agent answers them from the "
+        "graph.",
+        "",
+    ]
+    parts += [
+        "**Each safeguard removed on its own** (development plants)",
+        "",
+        table(HEAD, [row(n, d[n]) for n in ABLATIONS]),
+        "",
+    ]
+    parts += [checks_table(dev), ""]
+    held = _load("heldout")
+    if held is not None:
+        h = held["designs"]
+        parts += [
+            f"**Held-out plants, run once** (seeds {held['seeds']}; a different site: "
+            f"{h['platform']['series']} series, {h['platform']['machines']} machines, more independent loop "
+            "numbers, more German, noisier exports)",
+            "",
+        ]
+        parts += [table(HEAD, [row(n, h[n]) for n in MAIN]), "", gates(held), ""]
+    return "\n".join(parts).rstrip()
+
+
+def report_md() -> str:
+    lines = ["# Results", "", "Generated by `igo report` from `reports/dev.json` and `reports/heldout.json`.", ""]
+    for name in ("dev", "heldout"):
+        data = _load(name)
+        if data is None:
+            continue
+        lines += [f"## {'Development' if name == 'dev' else 'Held-out'} plants (seeds {data['seeds']})", ""]
+        lines += [table(HEAD, [row(n, data["designs"][n]) for n in MAIN + ABLATIONS]), ""]
+        lines += ["### Gates", ""]
+        lines += [
+            f"- {'PASS' if g['pass'] else 'FAIL'} {g['gate']}: {g['value']:.4g} {g['op']} {g['limit']}"
+            for g in data["gates"]
+        ]
+        lines += ["", "### Incidents after go-live", ""]
+        inc_rows = []
+        for n in MAIN:
+            for k, v in data["designs"][n]["incidents"].items():
+                inc_rows.append(
+                    [
+                        data["designs"][n]["label"],
+                        k,
+                        frac(v["in_sla"], v["n"]),
+                        str(v["never"]),
+                        "n/a" if v["median_hours"] is None else f"{v['median_hours']:.0f}",
+                    ]
+                )
+        lines += [table(["Design", "Incident", "Caught in SLA", "Never caught", "Median hours to catch"], inc_rows)]
+        lines += ["", checks_table(data), ""]
+    return "\n".join(lines)
+
+
+def console_data() -> dict:
+    return {
+        "dev": _load("dev"),
+        "heldout": _load("heldout"),
+        "lock": json.loads((REPORTS / "heldout.lock").read_text()) if (REPORTS / "heldout.lock").exists() else None,
+        "order": {"main": MAIN, "ablations": ABLATIONS},
+    }
+
+
+def write_all() -> None:
+    (ROOT / "REPORT.md").write_text(report_md() + "\n")
+    readme = ROOT / "README.md"
+    text = readme.read_text()
+    a, b = text.index(START) + len(START), text.index(END)
+    readme.write_text(text[:a] + "\n\n" + readme_block() + "\n\n" + text[b:])
+    out = ROOT / "web" / "public" / "data" / "report.json"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(tidy(console_data()), separators=(",", ":"), sort_keys=True) + "\n")
+    graf = ROOT / "deploy" / "grafana" / "igo-operations.json"
+    graf.parent.mkdir(parents=True, exist_ok=True)
+    graf.write_text(json.dumps(grafana_dashboard("plant", load("platform")["monitoring"]), indent=1) + "\n")

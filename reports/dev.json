@@ -1,0 +1,1402 @@
+{
+ "config_hash": "70015523fb92e545",
+ "designs": {
+  "agent_unchecked": {
+   "agent": {
+    "declined": 12,
+    "leaks": 25,
+    "model_calls": 240,
+    "refused_wrongly": 0,
+    "right": 194,
+    "wrong": 9
+   },
+   "agent_right": 0.8083333333,
+   "auto_share": 0.9420529801,
+   "duplicates": {
+    "merged_right": 10,
+    "merged_wrong": 0,
+    "planted": 11
+   },
+   "failures": 41,
+   "false_warnings": 2,
+   "golive_days": 1.0,
+   "incidents": {
+    "extractor_outage": {
+     "in_sla": 6,
+     "median_hours": 1.0,
+     "n": 6,
+     "never": 0
+    },
+    "flatline": {
+     "in_sla": 9,
+     "median_hours": 23.0,
+     "n": 9,
+     "never": 0
+    },
+    "rename_after_golive": {
+     "in_sla": 12,
+     "median_hours": 14.0,
+     "n": 12,
+     "never": 0
+    }
+   },
+   "incidents_in_sla": 1.0,
+   "label": "Agent without permission and citation checks",
+   "link_precision": 1.0,
+   "link_recall": 1.0,
+   "machines": 169,
+   "onboarding_hours": 0.8444444444,
+   "question_hours": 0.0,
+   "questions": 240,
+   "questions_by_hand": 0,
+   "renames": {
+    "merged_right": 46,
+    "merged_wrong": 0,
+    "planted": 47
+   },
+   "review_items": 91,
+   "series": 604,
+   "store_reapply_changes": null,
+   "units": {
+    "caught": 6,
+    "false": 0,
+    "planted": 6
+   },
+   "warned": 38,
+   "work_orders": {
+    "misbooked": 29,
+    "misbooked_fixed": 23,
+    "relink_wrong": 0,
+    "relinked": 23,
+    "right": 248,
+    "total": 254
+   },
+   "wrong_links": 0
+  },
+  "fuzzy_match": {
+   "agent": {
+    "declined": 3,
+    "leaks": 0,
+    "model_calls": 261,
+    "refused_wrongly": 0,
+    "right": 192,
+    "wrong": 45
+   },
+   "agent_right": 0.8,
+   "auto_share": 0.0,
+   "duplicates": {
+    "merged_right": 0,
+    "merged_wrong": 0,
+    "planted": 11
+   },
+   "failures": 41,
+   "false_warnings": 2,
+   "golive_days": 0.0,
+   "incidents": {
+    "extractor_outage": {
+     "in_sla": 6,
+     "median_hours": 1.0,
+     "n": 6,
+     "never": 0
+    },
+    "flatline": {
+     "in_sla": 8,
+     "median_hours": 23.0,
+     "n": 9,
+     "never": 1
+    },
+    "rename_after_golive": {
+     "in_sla": 12,
+     "median_hours": 14.0,
+     "n": 12,
+     "never": 0
+    }
+   },
+   "incidents_in_sla": 0.962962963,
+   "label": "Fuzzy name matching, accepted without review",
+   "link_precision": 0.9845857418,
+   "link_recall": 0.8460264901,
+   "machines": 169,
+   "onboarding_hours": 0.0,
+   "question_hours": 0.0,
+   "questions": 240,
+   "questions_by_hand": 0,
+   "renames": {
+    "merged_right": 0,
+    "merged_wrong": 0,
+    "planted": 47
+   },
+   "review_items": 0,
+   "series": 604,
+   "store_reapply_changes": null,
+   "units": {
+    "caught": 0,
+    "false": 0,
+    "planted": 6
+   },
+   "warned": 30,
+   "work_orders": {
+    "misbooked": 29,
+    "misbooked_fixed": 0,
+    "relink_wrong": 0,
+    "relinked": 0,
+    "right": 225,
+    "total": 254
+   },
+   "wrong_links": 8
+  },
+  "model_alone": {
+   "agent": {
+    "declined": 12,
+    "leaks": 25,
+    "model_calls": 240,
+    "refused_wrongly": 0,
+    "right": 143,
+    "wrong": 60
+   },
+   "agent_right": 0.5958333333,
+   "auto_share": 0.0,
+   "duplicates": {
+    "merged_right": 0,
+    "merged_wrong": 0,
+    "planted": 11
+   },
+   "failures": 41,
+   "false_warnings": 22,
+   "golive_days": 0.0,
+   "incidents": {
+    "extractor_outage": {
+     "in_sla": 6,
+     "median_hours": 1.0,
+     "n": 6,
+     "never": 0
+    },
+    "flatline": {
+     "in_sla": 9,
+     "median_hours": 23.0,
+     "n": 9,
+     "never": 0
+    },
+    "rename_after_golive": {
+     "in_sla": 12,
+     "median_hours": 14.0,
+     "n": 12,
+     "never": 0
+    }
+   },
+   "incidents_in_sla": 1.0,
+   "label": "A model reads names and descriptions and links them; agent without checks",
+   "link_precision": 0.8353140917,
+   "link_recall": 0.8145695364,
+   "machines": 169,
+   "onboarding_hours": 0.0,
+   "question_hours": 0.0,
+   "questions": 240,
+   "questions_by_hand": 0,
+   "renames": {
+    "merged_right": 0,
+    "merged_wrong": 0,
+    "planted": 47
+   },
+   "review_items": 0,
+   "series": 604,
+   "store_reapply_changes": null,
+   "units": {
+    "caught": 0,
+    "false": 0,
+    "planted": 6
+   },
+   "warned": 29,
+   "work_orders": {
+    "misbooked": 29,
+    "misbooked_fixed": 0,
+    "relink_wrong": 0,
+    "relinked": 0,
+    "right": 225,
+    "total": 254
+   },
+   "wrong_links": 97
+  },
+  "no_pid": {
+   "agent": {
+    "declined": 3,
+    "leaks": 0,
+    "model_calls": 261,
+    "refused_wrongly": 0,
+    "right": 235,
+    "wrong": 2
+   },
+   "agent_right": 0.9791666667,
+   "auto_share": 0.75,
+   "duplicates": {
+    "merged_right": 10,
+    "merged_wrong": 0,
+    "planted": 11
+   },
+   "failures": 41,
+   "false_warnings": 2,
+   "golive_days": 2.0,
+   "incidents": {
+    "extractor_outage": {
+     "in_sla": 6,
+     "median_hours": 1.0,
+     "n": 6,
+     "never": 0
+    },
+    "flatline": {
+     "in_sla": 9,
+     "median_hours": 23.0,
+     "n": 9,
+     "never": 0
+    },
+    "rename_after_golive": {
+     "in_sla": 12,
+     "median_hours": 14.0,
+     "n": 12,
+     "never": 0
+    }
+   },
+   "incidents_in_sla": 1.0,
+   "label": "Without the P&ID tag list",
+   "link_precision": 0.9983443709,
+   "link_recall": 0.9983443709,
+   "machines": 169,
+   "onboarding_hours": 2.827777778,
+   "question_hours": 0.0,
+   "questions": 240,
+   "questions_by_hand": 0,
+   "renames": {
+    "merged_right": 46,
+    "merged_wrong": 0,
+    "planted": 47
+   },
+   "review_items": 207,
+   "series": 604,
+   "store_reapply_changes": null,
+   "units": {
+    "caught": 6,
+    "false": 0,
+    "planted": 6
+   },
+   "warned": 38,
+   "work_orders": {
+    "misbooked": 29,
+    "misbooked_fixed": 23,
+    "relink_wrong": 0,
+    "relinked": 23,
+    "right": 248,
+    "total": 254
+   },
+   "wrong_links": 1
+  },
+  "no_quality": {
+   "agent": {
+    "declined": 3,
+    "leaks": 0,
+    "model_calls": 261,
+    "refused_wrongly": 0,
+    "right": 229,
+    "wrong": 8
+   },
+   "agent_right": 0.9541666667,
+   "auto_share": 0.8857615894,
+   "duplicates": {
+    "merged_right": 0,
+    "merged_wrong": 0,
+    "planted": 11
+   },
+   "failures": 41,
+   "false_warnings": 2,
+   "golive_days": 1.0,
+   "incidents": {
+    "extractor_outage": {
+     "in_sla": 6,
+     "median_hours": 1.0,
+     "n": 6,
+     "never": 0
+    },
+    "flatline": {
+     "in_sla": 9,
+     "median_hours": 23.0,
+     "n": 9,
+     "never": 0
+    },
+    "rename_after_golive": {
+     "in_sla": 12,
+     "median_hours": 14.0,
+     "n": 12,
+     "never": 0
+    }
+   },
+   "incidents_in_sla": 1.0,
+   "label": "Without duplicate, rename, unit and work-order checks",
+   "link_precision": 1.0,
+   "link_recall": 1.0,
+   "machines": 169,
+   "onboarding_hours": 0.6722222222,
+   "question_hours": 0.0,
+   "questions": 240,
+   "questions_by_hand": 0,
+   "renames": {
+    "merged_right": 0,
+    "merged_wrong": 0,
+    "planted": 47
+   },
+   "review_items": 69,
+   "series": 604,
+   "store_reapply_changes": null,
+   "units": {
+    "caught": 0,
+    "false": 0,
+    "planted": 6
+   },
+   "warned": 38,
+   "work_orders": {
+    "misbooked": 29,
+    "misbooked_fixed": 0,
+    "relink_wrong": 0,
+    "relinked": 0,
+    "right": 225,
+    "total": 254
+   },
+   "wrong_links": 0
+  },
+  "no_review": {
+   "agent": {
+    "declined": 3,
+    "leaks": 0,
+    "model_calls": 261,
+    "refused_wrongly": 0,
+    "right": 231,
+    "wrong": 6
+   },
+   "agent_right": 0.9625,
+   "auto_share": 0.8907284768,
+   "duplicates": {
+    "merged_right": 4,
+    "merged_wrong": 0,
+    "planted": 11
+   },
+   "failures": 41,
+   "false_warnings": 3,
+   "golive_days": 0.0,
+   "incidents": {
+    "extractor_outage": {
+     "in_sla": 6,
+     "median_hours": 1.0,
+     "n": 6,
+     "never": 0
+    },
+    "flatline": {
+     "in_sla": 9,
+     "median_hours": 23.0,
+     "n": 9,
+     "never": 0
+    },
+    "rename_after_golive": {
+     "in_sla": 12,
+     "median_hours": 14.0,
+     "n": 12,
+     "never": 0
+    }
+   },
+   "incidents_in_sla": 1.0,
+   "label": "Best candidate accepted, no engineer review",
+   "link_precision": 0.9983249581,
+   "link_recall": 0.9867549669,
+   "machines": 169,
+   "onboarding_hours": 0.0,
+   "question_hours": 0.0,
+   "questions": 240,
+   "questions_by_hand": 0,
+   "renames": {
+    "merged_right": 15,
+    "merged_wrong": 0,
+    "planted": 47
+   },
+   "review_items": 0,
+   "series": 604,
+   "store_reapply_changes": null,
+   "units": {
+    "caught": 6,
+    "false": 0,
+    "planted": 6
+   },
+   "warned": 38,
+   "work_orders": {
+    "misbooked": 29,
+    "misbooked_fixed": 5,
+    "relink_wrong": 0,
+    "relinked": 7,
+    "right": 230,
+    "total": 254
+   },
+   "wrong_links": 1
+  },
+  "no_signal": {
+   "agent": {
+    "declined": 3,
+    "leaks": 0,
+    "model_calls": 261,
+    "refused_wrongly": 0,
+    "right": 235,
+    "wrong": 2
+   },
+   "agent_right": 0.9791666667,
+   "auto_share": 0.7798013245,
+   "duplicates": {
+    "merged_right": 10,
+    "merged_wrong": 0,
+    "planted": 11
+   },
+   "failures": 41,
+   "false_warnings": 2,
+   "golive_days": 1.666666667,
+   "incidents": {
+    "extractor_outage": {
+     "in_sla": 6,
+     "median_hours": 1.0,
+     "n": 6,
+     "never": 0
+    },
+    "flatline": {
+     "in_sla": 9,
+     "median_hours": 23.0,
+     "n": 9,
+     "never": 0
+    },
+    "rename_after_golive": {
+     "in_sla": 12,
+     "median_hours": 14.0,
+     "n": 12,
+     "never": 0
+    }
+   },
+   "incidents_in_sla": 1.0,
+   "label": "Without signal correlation",
+   "link_precision": 0.9983443709,
+   "link_recall": 0.9983443709,
+   "machines": 169,
+   "onboarding_hours": 2.644444444,
+   "question_hours": 0.0,
+   "questions": 240,
+   "questions_by_hand": 0,
+   "renames": {
+    "merged_right": 46,
+    "merged_wrong": 0,
+    "planted": 47
+   },
+   "review_items": 189,
+   "series": 604,
+   "store_reapply_changes": null,
+   "units": {
+    "caught": 6,
+    "false": 0,
+    "planted": 6
+   },
+   "warned": 38,
+   "work_orders": {
+    "misbooked": 29,
+    "misbooked_fixed": 23,
+    "relink_wrong": 0,
+    "relinked": 23,
+    "right": 248,
+    "total": 254
+   },
+   "wrong_links": 1
+  },
+  "platform": {
+   "agent": {
+    "declined": 3,
+    "leaks": 0,
+    "model_calls": 261,
+    "refused_wrongly": 0,
+    "right": 236,
+    "wrong": 1
+   },
+   "agent_right": 0.9833333333,
+   "auto_share": 0.9420529801,
+   "duplicates": {
+    "merged_right": 10,
+    "merged_wrong": 0,
+    "planted": 11
+   },
+   "failures": 41,
+   "false_warnings": 2,
+   "golive_days": 1.0,
+   "incidents": {
+    "extractor_outage": {
+     "in_sla": 6,
+     "median_hours": 1.0,
+     "n": 6,
+     "never": 0
+    },
+    "flatline": {
+     "in_sla": 9,
+     "median_hours": 23.0,
+     "n": 9,
+     "never": 0
+    },
+    "rename_after_golive": {
+     "in_sla": 12,
+     "median_hours": 14.0,
+     "n": 12,
+     "never": 0
+    }
+   },
+   "incidents_in_sla": 1.0,
+   "label": "industrial-graph-onboarding",
+   "link_precision": 1.0,
+   "link_recall": 1.0,
+   "machines": 169,
+   "onboarding_hours": 0.8444444444,
+   "question_hours": 0.0,
+   "questions": 240,
+   "questions_by_hand": 0,
+   "renames": {
+    "merged_right": 46,
+    "merged_wrong": 0,
+    "planted": 47
+   },
+   "review_items": 91,
+   "series": 604,
+   "store_reapply_changes": 0,
+   "units": {
+    "caught": 6,
+    "false": 0,
+    "planted": 6
+   },
+   "warned": 38,
+   "work_orders": {
+    "misbooked": 29,
+    "misbooked_fixed": 23,
+    "relink_wrong": 0,
+    "relinked": 23,
+    "right": 248,
+    "total": 254
+   },
+   "wrong_links": 0
+  },
+  "status_quo": {
+   "agent": {
+    "declined": 0,
+    "leaks": 0,
+    "model_calls": 0,
+    "refused_wrongly": 0,
+    "right": 221,
+    "wrong": 19
+   },
+   "agent_right": 0.9208333333,
+   "auto_share": 0.0,
+   "duplicates": {
+    "merged_right": 0,
+    "merged_wrong": 0,
+    "planted": 11
+   },
+   "failures": 41,
+   "false_warnings": 3,
+   "golive_days": 4.0,
+   "incidents": {
+    "extractor_outage": {
+     "in_sla": 0,
+     "median_hours": 33.90057091,
+     "n": 6,
+     "never": 0
+    },
+    "flatline": {
+     "in_sla": 0,
+     "median_hours": 156.325632,
+     "n": 9,
+     "never": 1
+    },
+    "rename_after_golive": {
+     "in_sla": 0,
+     "median_hours": null,
+     "n": 12,
+     "never": 12
+    }
+   },
+   "incidents_in_sla": 0.0,
+   "label": "Manual onboarding: a spreadsheet lookup for standard names, an engineer maps the rest by hand",
+   "link_precision": 0.9929328622,
+   "link_recall": 0.9304635762,
+   "machines": 169,
+   "onboarding_hours": 8.711111111,
+   "question_hours": 16.0,
+   "questions": 240,
+   "questions_by_hand": 240,
+   "renames": {
+    "merged_right": 0,
+    "merged_wrong": 0,
+    "planted": 47
+   },
+   "review_items": 392,
+   "series": 604,
+   "store_reapply_changes": null,
+   "units": {
+    "caught": 0,
+    "false": 0,
+    "planted": 6
+   },
+   "warned": 35,
+   "work_orders": {
+    "misbooked": 29,
+    "misbooked_fixed": 0,
+    "relink_wrong": 0,
+    "relinked": 0,
+    "right": 225,
+    "total": 254
+   },
+   "wrong_links": 4
+  }
+ },
+ "gates": [
+  {
+   "gate": "Links to the right machine, of links made",
+   "limit": 0.99,
+   "op": ">=",
+   "pass": true,
+   "value": 1.0
+  },
+  {
+   "gate": "Series linked to the right machine, of all series",
+   "limit": 0.97,
+   "op": ">=",
+   "pass": true,
+   "value": 1.0
+  },
+  {
+   "gate": "Engineer onboarding hours / manual onboarding hours",
+   "limit": 0.25,
+   "op": "<=",
+   "pass": true,
+   "value": 0.09693877551
+  },
+  {
+   "gate": "Duplicate master records merged, of planted",
+   "limit": 0.9,
+   "op": ">=",
+   "pass": true,
+   "value": 0.9090909091
+  },
+  {
+   "gate": "Wrong work-order relinks, of relinks",
+   "limit": 0.01,
+   "op": "<=",
+   "pass": true,
+   "value": 0.0
+  },
+  {
+   "gate": "Incidents detected within their SLA",
+   "limit": 1.0,
+   "op": ">=",
+   "pass": true,
+   "value": 1.0
+  },
+  {
+   "gate": "Agent questions answered right",
+   "limit": 0.9,
+   "op": ">=",
+   "pass": true,
+   "value": 0.9833333333
+  },
+  {
+   "gate": "Agent answers outside the user's units",
+   "limit": 0.0,
+   "op": "<=",
+   "pass": true,
+   "value": 0.0
+  },
+  {
+   "gate": "Failures warned 2-21 days ahead",
+   "limit": 0.6,
+   "op": ">=",
+   "pass": true,
+   "value": 0.9268292683
+  }
+ ],
+ "samples": {
+  "review": [
+   {
+    "candidates": [
+     {
+      "evidence": {
+       "signal": 0.93
+      },
+      "p": 0.8253,
+      "tag": "E-2101"
+     },
+     {
+      "evidence": {
+       "signal": 0.39
+      },
+      "p": 0.158,
+      "tag": "E-2107"
+     },
+     {
+      "evidence": {
+       "signal": 0.29
+      },
+      "p": 0.0971,
+      "tag": "E-2102"
+     }
+    ],
+    "chosen": "E-2101",
+    "description": "PRESSURE EXCHANGER",
+    "name": "TAG_629764",
+    "right": true,
+    "ts": "TS100003"
+   },
+   {
+    "candidates": [
+     {
+      "evidence": {
+       "signal": 0.99
+      },
+      "p": 0.8764,
+      "tag": "P-2103B"
+     },
+     {
+      "evidence": {
+       "signal": 0.98
+      },
+      "p": 0.8668,
+      "tag": "P-3109B"
+     },
+     {
+      "evidence": {
+       "signal": 0.93
+      },
+      "p": 0.8298,
+      "tag": "P-3105B"
+     }
+    ],
+    "chosen": "P-2103B",
+    "description": "FLOW PUMP",
+    "name": "TAG_665523",
+    "right": true,
+    "ts": "TS100012"
+   },
+   {
+    "candidates": [
+     {
+      "evidence": {
+       "signal": 1.0
+      },
+      "p": 0.8824,
+      "tag": "P-2103B"
+     },
+     {
+      "evidence": {
+       "signal": 0.66
+      },
+      "p": 0.4872,
+      "tag": "P-2105A"
+     },
+     {
+      "evidence": {
+       "signal": 0.19
+      },
+      "p": 0.0535,
+      "tag": "F-2104"
+     }
+    ],
+    "chosen": "P-2103B",
+    "description": "MOTOR CURRENT",
+    "name": "U21_IT_2165_PV",
+    "right": true,
+    "ts": "TS100014"
+   },
+   {
+    "candidates": [
+     {
+      "evidence": {
+       "signal": 1.0
+      },
+      "p": 0.8832,
+      "tag": "P-2105B"
+     },
+     {
+      "evidence": {
+       "signal": 0.93
+      },
+      "p": 0.8327,
+      "tag": "P-3207A"
+     },
+     {
+      "evidence": {
+       "signal": 0.92
+      },
+      "p": 0.8217,
+      "tag": "P-3204B"
+     }
+    ],
+    "chosen": "P-2105B",
+    "description": "PRESSURE PUMP",
+    "name": "TAG_606451",
+    "right": true,
+    "ts": "TS100022"
+   },
+   {
+    "candidates": [
+     {
+      "evidence": {
+       "signal": 1.01
+      },
+      "p": 0.886,
+      "tag": "P-2105B"
+     },
+     {
+      "evidence": {
+       "signal": 0.94
+      },
+      "p": 0.8356,
+      "tag": "P-3207A"
+     },
+     {
+      "evidence": {
+       "signal": 0.92
+      },
+      "p": 0.824,
+      "tag": "P-3204B"
+     }
+    ],
+    "chosen": "P-2105B",
+    "description": "MOTOR CURRENT PUMP",
+    "name": "TAG_794064",
+    "right": true,
+    "ts": "TS100025"
+   },
+   {
+    "candidates": [
+     {
+      "evidence": {},
+      "p": 0.018,
+      "tag": "E-2101"
+     },
+     {
+      "evidence": {},
+      "p": 0.018,
+      "tag": "E-2102"
+     },
+     {
+      "evidence": {},
+      "p": 0.018,
+      "tag": "P-2103A"
+     }
+    ],
+    "chosen": "E-2202",
+    "description": "TEMPERATURE",
+    "name": "TAG_955966",
+    "right": true,
+    "ts": "TS100037"
+   },
+   {
+    "candidates": [
+     {
+      "evidence": {
+       "signal": 0.71
+      },
+      "p": 0.5621,
+      "tag": "E-2202"
+     },
+     {
+      "evidence": {
+       "signal": 0.62
+      },
+      "p": 0.4287,
+      "tag": "E-2207"
+     },
+     {
+      "evidence": {
+       "signal": 0.6
+      },
+      "p": 0.397,
+      "tag": "V-2203"
+     }
+    ],
+    "chosen": "V-2203",
+    "description": "PRESSURE VESSEL",
+    "name": "TAG_677971",
+    "right": true,
+    "ts": "TS100041"
+   },
+   {
+    "candidates": [
+     {
+      "evidence": {
+       "signal": 1.0
+      },
+      "p": 0.8835,
+      "tag": "P-2204A"
+     },
+     {
+      "evidence": {
+       "signal": 0.96
+      },
+      "p": 0.8531,
+      "tag": "P-3208A"
+     },
+     {
+      "evidence": {
+       "signal": 0.87
+      },
+      "p": 0.7737,
+      "tag": "P-3105A"
+     }
+    ],
+    "chosen": "P-2204A",
+    "description": "VIBRATION PUMP",
+    "name": "TAG_818670",
+    "right": true,
+    "ts": "TS100045"
+   }
+  ],
+  "transcripts": {
+   "model_alone": [
+    {
+     "answer": "U21_PT_2103A_PV, U21_FT_2171_PV, U21_VT_2195_PV, U21_IT_2103A_PV",
+     "cited": [
+      "ts:TS100007",
+      "ts:TS100008",
+      "ts:TS100009",
+      "ts:TS100010"
+     ],
+     "kind": "sensors",
+     "q": "Q000",
+     "text": "Which sensors are installed on Pumpe 2103B?",
+     "user": "ops_lead_21",
+     "verdict": "wrong"
+    },
+    {
+     "answer": "31-PT-3103, 31-FT-3103, 31-VT-3171, 31-IT-3103",
+     "cited": [
+      "ts:TS100119",
+      "ts:TS100120",
+      "ts:TS100121",
+      "ts:TS100122"
+     ],
+     "kind": "sensors",
+     "q": "Q001",
+     "text": "Which sensors are installed on P3103?",
+     "user": "site_manager",
+     "verdict": "right"
+    },
+    {
+     "answer": "23-TT-2389, 23-PT-2303",
+     "cited": [
+      "ts:TS100075",
+      "ts:TS100076"
+     ],
+     "kind": "sensors",
+     "q": "Q002",
+     "text": "Which sensors are installed on E2303?",
+     "user": "contractor_23",
+     "verdict": "wrong"
+    },
+    {
+     "answer": "23-PT-2304, 23-VT-2388, 23-IT-2304",
+     "cited": [
+      "ts:TS100077",
+      "ts:TS100079",
+      "ts:TS100080"
+     ],
+     "kind": "sensors",
+     "q": "Q003",
+     "text": "Which sensors are installed on K-2304?",
+     "user": "contractor_23",
+     "verdict": "wrong"
+    },
+    {
+     "answer": "P-2105B",
+     "cited": [
+      "machine:10004142"
+     ],
+     "kind": "most_corrective",
+     "q": "Q004",
+     "text": "Which equipment in unit 21 had the most corrective work orders?",
+     "user": "ops_lead_21",
+     "verdict": "right"
+    },
+    {
+     "answer": "Day 57",
+     "cited": [
+      "machine:10004387"
+     ],
+     "kind": "last_corrective",
+     "q": "Q005",
+     "text": "When was the last corrective work order on Pumpe 3109A?",
+     "user": "site_manager",
+     "verdict": "right"
+    },
+    {
+     "answer": "K-2304",
+     "cited": [
+      "machine:10004254"
+     ],
+     "kind": "most_corrective",
+     "q": "Q006",
+     "text": "Which equipment in unit 23 had the most corrective work orders?",
+     "user": "contractor_23",
+     "verdict": "right"
+    },
+    {
+     "answer": "P-2105B",
+     "cited": [
+      "machine:10004142"
+     ],
+     "kind": "most_corrective",
+     "q": "Q007",
+     "text": "Which equipment in unit 21 had the most corrective work orders?",
+     "user": "ops_lead_21",
+     "verdict": "right"
+    },
+    {
+     "answer": "U21_PT_2103A_PV, U21_FT_2171_PV, U21_VT_2195_PV, U21_IT_2103A_PV",
+     "cited": [
+      "ts:TS100007",
+      "ts:TS100008",
+      "ts:TS100009",
+      "ts:TS100010"
+     ],
+     "kind": "sensors",
+     "q": "Q008",
+     "text": "Which sensors are installed on P2103A?",
+     "user": "site_manager",
+     "verdict": "right"
+    },
+    {
+     "answer": "K-3101",
+     "cited": [
+      "machine:10004317"
+     ],
+     "kind": "most_corrective",
+     "q": "Q009",
+     "text": "Which equipment in unit 31 had the most corrective work orders?",
+     "user": "contractor_23",
+     "verdict": "leaks"
+    },
+    {
+     "answer": "No.",
+     "cited": [
+      "machine:10004401"
+     ],
+     "kind": "vibration_trend",
+     "q": "Q010",
+     "text": "Is vibration on F3201 rising over the last 7 days?",
+     "user": "site_manager",
+     "verdict": "right"
+    },
+    {
+     "answer": "No.",
+     "cited": [
+      "machine:10004135"
+     ],
+     "kind": "vibration_trend",
+     "q": "Q011",
+     "text": "Is vibration on P2105A rising over the last 7 days?",
+     "user": "site_manager",
+     "verdict": "right"
+    }
+   ],
+   "platform": [
+    {
+     "answer": "U21_PT_2162_PV, TAG_665523, U21_VT_2174_PV, U21_IT_2165_PV",
+     "cited": [
+      "ts:TS100011",
+      "ts:TS100012",
+      "ts:TS100013",
+      "ts:TS100014"
+     ],
+     "kind": "sensors",
+     "q": "Q000",
+     "text": "Which sensors are installed on Pumpe 2103B?",
+     "user": "ops_lead_21",
+     "verdict": "right"
+    },
+    {
+     "answer": "31-PT-3103, 31-FT-3103, 31-VT-3171, 31-IT-3103",
+     "cited": [
+      "ts:TS100119",
+      "ts:TS100120",
+      "ts:TS100121",
+      "ts:TS100122"
+     ],
+     "kind": "sensors",
+     "q": "Q001",
+     "text": "Which sensors are installed on P3103?",
+     "user": "site_manager",
+     "verdict": "right"
+    },
+    {
+     "answer": "TAG_266973, 23-TT-2389, 23-PT-2303",
+     "cited": [
+      "ts:TS100074",
+      "ts:TS100075",
+      "ts:TS100076"
+     ],
+     "kind": "sensors",
+     "q": "Q002",
+     "text": "Which sensors are installed on E2303?",
+     "user": "contractor_23",
+     "verdict": "right"
+    },
+    {
+     "answer": "23-PT-2304, 23-TT-2304, 23-VT-2388, 23-IT-2304",
+     "cited": [
+      "ts:TS100077",
+      "ts:TS100078",
+      "ts:TS100079",
+      "ts:TS100080"
+     ],
+     "kind": "sensors",
+     "q": "Q003",
+     "text": "Which sensors are installed on K-2304?",
+     "user": "contractor_23",
+     "verdict": "right"
+    },
+    {
+     "answer": "P-2105B",
+     "cited": [
+      "machine:10004142"
+     ],
+     "kind": "most_corrective",
+     "q": "Q004",
+     "text": "Which equipment in unit 21 had the most corrective work orders?",
+     "user": "ops_lead_21",
+     "verdict": "right"
+    },
+    {
+     "answer": "Day 57",
+     "cited": [
+      "machine:10004387"
+     ],
+     "kind": "last_corrective",
+     "q": "Q005",
+     "text": "When was the last corrective work order on Pumpe 3109A?",
+     "user": "site_manager",
+     "verdict": "right"
+    },
+    {
+     "answer": "K-2304",
+     "cited": [
+      "machine:10004254"
+     ],
+     "kind": "most_corrective",
+     "q": "Q006",
+     "text": "Which equipment in unit 23 had the most corrective work orders?",
+     "user": "contractor_23",
+     "verdict": "right"
+    },
+    {
+     "answer": "P-2105B",
+     "cited": [
+      "machine:10004142"
+     ],
+     "kind": "most_corrective",
+     "q": "Q007",
+     "text": "Which equipment in unit 21 had the most corrective work orders?",
+     "user": "ops_lead_21",
+     "verdict": "right"
+    },
+    {
+     "answer": "U21_PT_2103A_PV, U21_FT_2171_PV, U21_VT_2195_PV, U21_IT_2103A_PV",
+     "cited": [
+      "ts:TS100007",
+      "ts:TS100008",
+      "ts:TS100009",
+      "ts:TS100010"
+     ],
+     "kind": "sensors",
+     "q": "Q008",
+     "text": "Which sensors are installed on P2103A?",
+     "user": "site_manager",
+     "verdict": "right"
+    },
+    {
+     "answer": "Not shown: outside your units.",
+     "cited": [],
+     "kind": "most_corrective",
+     "q": "Q009",
+     "text": "Which equipment in unit 31 had the most corrective work orders?",
+     "user": "contractor_23",
+     "verdict": "right"
+    },
+    {
+     "answer": "No.",
+     "cited": [
+      "machine:10004401"
+     ],
+     "kind": "vibration_trend",
+     "q": "Q010",
+     "text": "Is vibration on F3201 rising over the last 7 days?",
+     "user": "site_manager",
+     "verdict": "right"
+    },
+    {
+     "answer": "No.",
+     "cited": [
+      "machine:10004135"
+     ],
+     "kind": "vibration_trend",
+     "q": "Q011",
+     "text": "Is vibration on P2105A rising over the last 7 days?",
+     "user": "site_manager",
+     "verdict": "right"
+    }
+   ],
+   "status_quo": [
+    {
+     "answer": "U21_PT_2162_PV, TAG_665523, U21_VT_2174_PV, U21_IT_2165_PV",
+     "cited": [
+      "ts:TS100011",
+      "ts:TS100012",
+      "ts:TS100013",
+      "ts:TS100014"
+     ],
+     "kind": "sensors",
+     "q": "Q000",
+     "text": "Which sensors are installed on Pumpe 2103B?",
+     "user": "ops_lead_21",
+     "verdict": "right"
+    },
+    {
+     "answer": "31-PT-3103, 31-FT-3103, 31-VT-3171, 31-IT-3103",
+     "cited": [
+      "ts:TS100119",
+      "ts:TS100120",
+      "ts:TS100121",
+      "ts:TS100122"
+     ],
+     "kind": "sensors",
+     "q": "Q001",
+     "text": "Which sensors are installed on P3103?",
+     "user": "site_manager",
+     "verdict": "right"
+    },
+    {
+     "answer": "TAG_266973, 23-TT-2389, 23-PT-2303",
+     "cited": [
+      "ts:TS100074",
+      "ts:TS100075",
+      "ts:TS100076"
+     ],
+     "kind": "sensors",
+     "q": "Q002",
+     "text": "Which sensors are installed on E2303?",
+     "user": "contractor_23",
+     "verdict": "right"
+    },
+    {
+     "answer": "23-PT-2304, 23-TT-2304, 23-VT-2388, 23-IT-2304",
+     "cited": [
+      "ts:TS100077",
+      "ts:TS100078",
+      "ts:TS100079",
+      "ts:TS100080"
+     ],
+     "kind": "sensors",
+     "q": "Q003",
+     "text": "Which sensors are installed on K-2304?",
+     "user": "contractor_23",
+     "verdict": "right"
+    },
+    {
+     "answer": "P-2105B",
+     "cited": [
+      "machine:10004142"
+     ],
+     "kind": "most_corrective",
+     "q": "Q004",
+     "text": "Which equipment in unit 21 had the most corrective work orders?",
+     "user": "ops_lead_21",
+     "verdict": "right"
+    },
+    {
+     "answer": "Day 57",
+     "cited": [
+      "machine:10004387"
+     ],
+     "kind": "last_corrective",
+     "q": "Q005",
+     "text": "When was the last corrective work order on Pumpe 3109A?",
+     "user": "site_manager",
+     "verdict": "right"
+    },
+    {
+     "answer": "K-2304",
+     "cited": [
+      "machine:10004254"
+     ],
+     "kind": "most_corrective",
+     "q": "Q006",
+     "text": "Which equipment in unit 23 had the most corrective work orders?",
+     "user": "contractor_23",
+     "verdict": "right"
+    },
+    {
+     "answer": "P-2105B",
+     "cited": [
+      "machine:10004142"
+     ],
+     "kind": "most_corrective",
+     "q": "Q007",
+     "text": "Which equipment in unit 21 had the most corrective work orders?",
+     "user": "ops_lead_21",
+     "verdict": "right"
+    },
+    {
+     "answer": "U21_PT_2103A_PV, U21_FT_2171_PV, U21_VT_2195_PV, U21_IT_2103A_PV",
+     "cited": [
+      "ts:TS100007",
+      "ts:TS100008",
+      "ts:TS100009",
+      "ts:TS100010"
+     ],
+     "kind": "sensors",
+     "q": "Q008",
+     "text": "Which sensors are installed on P2103A?",
+     "user": "site_manager",
+     "verdict": "right"
+    },
+    {
+     "answer": "Not shown: outside your units.",
+     "cited": [],
+     "kind": "most_corrective",
+     "q": "Q009",
+     "text": "Which equipment in unit 31 had the most corrective work orders?",
+     "user": "contractor_23",
+     "verdict": "right"
+    },
+    {
+     "answer": "No.",
+     "cited": [
+      "machine:10004401"
+     ],
+     "kind": "vibration_trend",
+     "q": "Q010",
+     "text": "Is vibration on F3201 rising over the last 7 days?",
+     "user": "site_manager",
+     "verdict": "right"
+    },
+    {
+     "answer": "No vibration sensor linked.",
+     "cited": [
+      "machine:10004135"
+     ],
+     "kind": "vibration_trend",
+     "q": "Q011",
+     "text": "Is vibration on P2105A rising over the last 7 days?",
+     "user": "site_manager",
+     "verdict": "wrong"
+    }
+   ]
+  }
+ },
+ "seeds": [
+  11,
+  12,
+  13
+ ],
+ "world": "dev"
+}

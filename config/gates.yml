@@ -1,0 +1,10 @@
+# Fixed before the held-out run. A gate is a promise to a customer, not a tuning target.
+link_precision_min: 0.99
+link_recall_min: 0.97
+engineer_minutes_ratio_max: 0.25      # platform review minutes / manual onboarding minutes
+duplicates_found_min: 0.9
+wo_wrong_relinks_max: 0.01            # wrong relinks / work orders relinked
+incidents_in_sla_min: 1.0
+agent_right_min: 0.9
+agent_leaks_max: 0
+failures_warned_min: 0.6

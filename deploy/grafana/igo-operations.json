@@ -1,0 +1,123 @@
+{
+ "title": "plant: industrial graph operations",
+ "uid": "igo-plant",
+ "tags": [
+  "igo",
+  "sla"
+ ],
+ "annotations": {
+  "list": [
+   {
+    "name": "extractor_outage",
+    "sla_hours": 4
+   },
+   {
+    "name": "rename_after_golive",
+    "sla_hours": 24
+   },
+   {
+    "name": "flatline",
+    "sla_hours": 24
+   }
+  ]
+ },
+ "panels": [
+  {
+   "title": "Series silent per unit (hours)",
+   "type": "timeseries",
+   "fieldConfig": {
+    "defaults": {
+     "thresholds": {
+      "steps": [
+       {
+        "color": "green",
+        "value": null
+       },
+       {
+        "color": "red",
+        "value": 2
+       }
+      ]
+     }
+    }
+   },
+   "targets": [
+    {
+     "expr": "igo_unit_silent_hours{site=\"plant\"}"
+    }
+   ],
+   "id": 1,
+   "gridPos": {
+    "x": 0,
+    "y": 0,
+    "w": 12,
+    "h": 8
+   }
+  },
+  {
+   "title": "Flatlined series",
+   "type": "stat",
+   "targets": [
+    {
+     "expr": "igo_flatlined_series{site=\"plant\"}"
+    }
+   ],
+   "id": 2,
+   "gridPos": {
+    "x": 12,
+    "y": 0,
+    "w": 12,
+    "h": 8
+   }
+  },
+  {
+   "title": "Series waiting for a link",
+   "type": "stat",
+   "targets": [
+    {
+     "expr": "igo_unlinked_series{site=\"plant\"}"
+    }
+   ],
+   "id": 3,
+   "gridPos": {
+    "x": 0,
+    "y": 8,
+    "w": 12,
+    "h": 8
+   }
+  },
+  {
+   "title": "Review queue age (hours)",
+   "type": "timeseries",
+   "targets": [
+    {
+     "expr": "igo_review_oldest_hours{site=\"plant\"}"
+    }
+   ],
+   "id": 4,
+   "gridPos": {
+    "x": 12,
+    "y": 8,
+    "w": 12,
+    "h": 8
+   }
+  },
+  {
+   "title": "Early warnings, last 7 days",
+   "type": "table",
+   "targets": [
+    {
+     "expr": "igo_vibration_warnings{site=\"plant\"}"
+    }
+   ],
+   "id": 5,
+   "gridPos": {
+    "x": 0,
+    "y": 16,
+    "w": 12,
+    "h": 8
+   }
+  }
+ ],
+ "schemaVersion": 39
+}

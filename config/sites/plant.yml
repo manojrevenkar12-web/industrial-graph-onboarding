@@ -1,0 +1,25 @@
+# Onboarding configuration for one site: how its sources name things. Written by the solution architect in the
+# discovery workshop, versioned, reviewed by pull request and deployed by CI (igo plan / igo apply).
+site: plant
+historian:
+  name_patterns:
+    - '^(?P<unit>\d{2})(?P<type>[A-Z]{2})(?P<loop>\d{4}[A-Z]?)\.PV$'
+    - '^(?P<unit>\d{2})-(?P<type>[A-Z]{2})-(?P<loop>\d{4}[A-Z]?)$'
+    - '^U(?P<unit>\d{2})_(?P<type>[A-Z]{2})_(?P<loop>\d{4}[A-Z]?)_PV$'
+  units: {PT: bar, TT: degC, FT: m3/h, VT: mm/s, IT: A, LT: "%"}
+sap_pm:
+  floc_pattern: '^PLT1-(?P<unit>\d{2})-(?P<cls>[A-Z]{1,3})-(?P<number>\d{4}[A-Z]?)$'
+equipment_codes: {P: pump, K: compressor, E: heat_exchanger, V: vessel, F: fan}
+measurement_fits:
+  pump: [PT, FT, VT, IT, TT]
+  compressor: [PT, TT, VT, IT]
+  heat_exchanger: [TT, PT, FT]
+  vessel: [LT, PT, TT]
+  fan: [VT, IT, TT]
+typical_range:            # median while running, in the declared unit
+  PT: [0.5, 40]
+  TT: [-20, 450]
+  FT: [1, 2000]
+  VT: [0.2, 25]
+  IT: [2, 600]
+  LT: [0, 100]

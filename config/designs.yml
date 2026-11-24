@@ -1,0 +1,36 @@
+# Every design onboards the same plant, with the same engineer, the same model mistakes and the same incidents.
+status_quo:
+  label: "Manual onboarding: a spreadsheet lookup for standard names, an engineer maps the rest by hand"
+  matcher: manual
+  review: all
+  quality: false
+  monitoring: none
+  agent: manual
+fuzzy_match:
+  label: "Fuzzy name matching, accepted without review"
+  matcher: fuzzy
+  review: none
+  quality: false
+  monitoring: platform
+  agent: checked
+model_alone:
+  label: "A model reads names and descriptions and links them; agent without checks"
+  matcher: model
+  review: none
+  quality: false
+  monitoring: platform
+  agent: unguarded
+platform:
+  label: "industrial-graph-onboarding"
+  matcher: platform
+  review: band
+  quality: true
+  monitoring: platform
+  agent: checked
+  features: {name: true, pid: true, description: true, signal: true}
+ablations:
+  no_signal: {label: "Without signal correlation", overlay: {features: {signal: false}}}
+  no_pid: {label: "Without the P&ID tag list", overlay: {features: {pid: false}}}
+  no_review: {label: "Best candidate accepted, no engineer review", overlay: {review: none}}
+  no_quality: {label: "Without duplicate, rename, unit and work-order checks", overlay: {quality: false}}
+  agent_unchecked: {label: "Agent without permission and citation checks", overlay: {agent: unguarded}}
